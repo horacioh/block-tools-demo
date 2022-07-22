@@ -1,0 +1,147 @@
+:root {
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 6rem;
+
+  --tools-x: -999;
+  --tools-y: -999;
+  --width: 30;
+  --height: 30;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: lightblue;
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  block-size: 100%;
+  min-block-size: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+/* main::before {
+  /* content: calc(var(--mouse-y) * 1px);
+  position: absolute;
+  top: calc(var(--space-lg) * -1);
+  padding: var(--space-sm);
+  left: 0;
+  counter-reset: variable var(--mouse-y);
+    content: counter(variable);
+
+} */
+
+main,
+ul,
+ol,
+li {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  --mouse-y: 0;
+  min-block-size: 100%;
+  margin-block: var(--space-xl);
+  /* margin-inline: auto; */
+  padding-inline: var(--space-xs);
+  position: relative;
+}
+
+
+li {
+  padding-inline-start: 2rem;
+}
+
+li:has(.visible) {
+  border: 1px dashed rgba(255, 0, 0, 0.2);
+  /* background-color: red; */
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+code {
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  display: inline-block;
+  max-inline-size: 59ch;
+}
+
+p {
+  --inline-start-offset: 0;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-block: 0.5rem;
+}
+
+/* p:before {
+  content: "";
+  display: block;
+  position: absolute;
+  inline-size: 105vw;
+  block-size: calc(100%);
+  background: hsl(245, 100%, 84%);
+  inset-block-start: 0;
+  inset-inline-start: calc(var(--inline-start-offset) * -1);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  /* transform: translate(-50%, -50%); */
+  transition: opacity 0.2s ease, visibility 0.2s;
+} */
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+}
+
+.block-tools {
+  position: fixed;
+  
+  top: calc(var(--tools-y, -999) * 1px);
+  left: calc(var(--tools-x, -999) * 1px);
+  width: calc(var(--width) * 1px);
+  height: calc(var(--height) * 1px);
+  /* block-size: 30px;
+  inline-size: 30px; */
+  background: red; 
+}
